@@ -1,0 +1,31 @@
+- Restaurant Menu API
+All users can view the available menu items. (GET request to api/menu/)
+The restaurant owner (superuser) can add menu items. (POST request to api/menu/)
+The restaurant owner (superuser) can update and delete menu items. (PUT/DELETE request to api/menu/<int:pk>/)
+
+- Shopping Cart API
+Users can add items to their cart by specifying the item and quantity. (POST request to api/cart/menu-items/)
+Users can view the contents of their own cart. (GET request to api/cart/menu-items/)
+Users can empty their carts. (DELETE request to api/cart/menu-items/)
+
+- Delivery Order API
+Managers can view all restaurant orders. (GET request to api/orders/)
+Delivery crew members can view only the orders assigned to them by a manager. (GET request to api/orders/)
+Customers can view only their own orders. (GET request to api/orders/)
+Users can place an order, which will automatically clear their cart. (POST request to api/orders/)
+Managers can assign orders to delivery crew members. (PUT request to api/orders/<int:pk>/)
+Managers and delivery crew responsible for a specific order can update its status (delivered=1, in progress=0). (PUT request to api/orders/<int:pk>/)
+Managers can delete orders. (DELETE request to api/orders/<int:pk>/)
+
+- Table Booking API
+Managers can view all table bookings in the restaurant. (GET request to api/booking/tables/)
+
+- Delivery Crew Management API
+Managers can hire delivery crew members. (POST request to api/groups/delivery-crew/users/)
+Managers can fire delivery crew memebers. (DELETE request to api/groups/delivery-crew/users/<int:userId>/)
+
+- Manager Management API
+The restaurant owner (superuser) can hire managers. (POST request to api/groups/manager/users/)
+The restaurant owner (superuser) can fire managers. (DELETE request to api/groups/manager/users/<int:userId>/)
+
+Note: Please refer to Users.txt for a list of users with different roles (Owner, Manager, Delivery Crew, Customer).
